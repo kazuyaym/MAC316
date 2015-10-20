@@ -1,0 +1,2 @@
+Skeleton 5
+ae"GoBotLexFun"i2aä¢Tokens"gp1c"GoBot_TOKENS"f5Cä¢Int"d"List"ä¢String"d"TextIO"ä¢Vector"Nh3aä¢UserDeclarations"h1aÿgp1ÿaä¢Internal"h1aä¢StartStates"h0bbbd2bc2egp1ÿegp2ÿ:ÿ‚f3ÿ0ÿÿ:f2ä¢Unsafe"ÿ:f6d"Char"Cÿ=ÿÿ‚<ÿÿ:Næ0ÿƒ!

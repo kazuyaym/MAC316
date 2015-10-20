@@ -1,0 +1,23 @@
+Standard ML of New Jersey v110.69 [built: Mon Jun  8 14:15:08 2009]
+[scanning sources.cm]
+[library $/ml-yacc-lib.cm is stable]
+[attempting to load plugin $/grm-ext.cm]
+[library $/grm-ext.cm is stable]
+[library $smlnj/cm/tools.cm is stable]
+[library $smlnj/internal/cm-lib.cm is stable]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[plugin $/grm-ext.cm loaded successfully]
+[attempting to load plugin $/mlyacc-tool.cm]
+[library $/mlyacc-tool.cm is stable]
+[plugin $/mlyacc-tool.cm loaded successfully]
+["ml-yacc" "" "goBot.grm"]
+sources.cm:11.3-11.12 Error: tool "ML-Yacc" failed: "ml-yacc" "" "goBot.grm"
+[attempting to load plugin $/lex-ext.cm]
+[library $/lex-ext.cm is stable]
+[plugin $/lex-ext.cm loaded successfully]
+[attempting to load plugin $/mllex-tool.cm]
+[library $/mllex-tool.cm is stable]
+[plugin $/mllex-tool.cm loaded successfully]
+["ml-ulex" "--ml-lex-mode" "goBot.lex"]
+sources.cm:12.3-12.12 Error: tool "ULex-ML-Lex" failed: "ml-ulex" "--ml-lex-mode" "goBot.lex"
+Compilation failed.

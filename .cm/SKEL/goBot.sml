@@ -1,0 +1,2 @@
+Skeleton 5
+d2f2d"Int"d"TextIO"ad"GoBot"jh3aä¢GoBotLrVals"jh1aä¢Token"gp2ä¢LrParser"ÿ2gp1e"GoBotLrValsFun"aä¢GoBotLex"jh1aä¢Tokens"gp2ÿ ÿ.gp1e"GoBotLexFun"ad"GoBotParser"jh3aÿ=gp1ÿ=aä¢ParserData"gp2ÿ ÿ‚+ad"Lex"gp1ÿgp1e"Join"h0

@@ -1,0 +1,469 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00000000, pid=12297, tid=3063233392
+#
+# JRE version: 7.0_07-b10
+# Java VM: Java HotSpot(TM) Server VM (23.3-b01 mixed mode linux-x86 )
+# Problematic frame:
+# C  0x00000000
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.sun.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x09148800):  JavaThread "main" [_thread_in_Java, id=12298, stack(0xb6903000,0xb6954000)]
+
+siginfo:si_signo=SIGSEGV: si_errno=0, si_code=1 (SEGV_MAPERR), si_addr=0x00000000
+
+Registers:
+EAX=0x00000000, EBX=0x7bfae310, ECX=0xa2500da0, EDX=0x0c800001
+ESP=0xb69526c0, EBP=0xb69526e8, ESI=0xb69526c4, EDI=0xb69526ec
+EIP=0x00000000, EFLAGS=0x00210246, CR2=0x00000000
+
+Top of Stack: (sp=0xb69526c0)
+0xb69526c0:   b38646fb a2500da0 b69526c8 7bfb8bdb
+0xb69526d0:   b69526ec 7c013cb8 00000000 7bfb8c18
+0xb69526e0:   b69526c4 b69526f0 b6952708 b3861459
+0xb69526f0:   7bfb8c18 ffffffff 00001f80 b7170ce8
+0xb6952700:   09149114 b6952754 b6952798 b6d8c7a5
+0xb6952710:   b6952754 b6952854 0000000a 7bfb8c18
+0xb6952720:   b386ac40 b6952810 00000000 09148800
+0xb6952730:   b6952754 b6952774 b386ac40 0000000a 
+
+Instructions: (pc=0x00000000)
+0xffffffe0:   
+
+Register to memory mapping:
+
+EAX=0x00000000 is an unknown value
+EBX=0x7bfae310 is an oop
+{method} 
+ - klass: {other class}
+ECX=0xa2500da0 is an oop
+java.lang.Class 
+ - klass: 'java/lang/Class'
+EDX=0x0c800001 is an unknown value
+ESP=0xb69526c0 is pointing into the stack for thread: 0x09148800
+EBP=0xb69526e8 is pointing into the stack for thread: 0x09148800
+ESI=0xb69526c4 is pointing into the stack for thread: 0x09148800
+EDI=0xb69526ec is pointing into the stack for thread: 0x09148800
+
+
+Stack: [0xb6903000,0xb6954000],  sp=0xb69526c0,  free space=317k
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x09355800 JavaThread "Reference Handler" daemon [_thread_blocked, id=12308, stack(0x790bb000,0x7910c000)]
+=>0x09148800 JavaThread "main" [_thread_in_Java, id=12298, stack(0xb6903000,0xb6954000)]
+
+Other Threads:
+  0x0934fc00 VMThread [stack: 0x7910c000,0x7918d000] [id=12307]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ PSYoungGen      total 15360K, used 263K [0xa2500000, 0xa3620000, 0xb37a0000)
+  eden space 13184K, 2% used [0xa2500000,0xa2541f28,0xa31e0000)
+  from space 2176K, 0% used [0xa3400000,0xa3400000,0xa3620000)
+  to   space 2176K, 0% used [0xa31e0000,0xa31e0000,0xa3400000)
+ ParOldGen       total 35200K, used 0K [0x7ffa0000, 0x82200000, 0xa2500000)
+  object space 35200K, 0% used [0x7ffa0000,0x7ffa0000,0x82200000)
+ PSPermGen       total 16384K, used 553K [0x7bfa0000, 0x7cfa0000, 0x7ffa0000)
+  object space 16384K, 3% used [0x7bfa0000,0x7c02a4f0,0x7cfa0000)
+
+Card table byte_map: [0x7bde3000,0x7bfa0000] byte_map_base: 0x7ba03300
+
+Polling page: 0xb7734000
+
+Code Cache  [0xb3861000, 0xb3aa1000, 0xb6861000)
+ total_blobs=42 nmethods=0 adapters=18 free_code_cache=48880Kb largest_free_block=50053760
+
+Compilation events (0 events):
+No events
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (10 events):
+Event: 0.030 loading class 0x091ab558 done
+Event: 0.030 Thread 0x09355800 Thread added: 0x09355800
+Event: 0.030 loading class 0x091ab598
+Event: 0.031 loading class 0x091ab598 done
+Event: 0.031 loading class 0x7b800518
+Event: 0.031 loading class 0x7b800518 done
+Event: 0.031 loading class 0x7b8004e0
+Event: 0.031 loading class 0x7b8004e0 done
+Event: 0.031 loading class 0x091acbd8
+Event: 0.031 loading class 0x091acbd8 done
+
+
+Dynamic libraries:
+08048000-08049000 r-xp 00000000 08:03 1276011    /opt/libs/jdk1.7.0_07/bin/java
+08049000-0804a000 rw-p 00000000 08:03 1276011    /opt/libs/jdk1.7.0_07/bin/java
+09143000-0936f000 rw-p 00000000 00:00 0          [heap]
+790bb000-790be000 ---p 00000000 00:00 0 
+790be000-7910c000 rw-p 00000000 00:00 0 
+7910c000-7910d000 ---p 00000000 00:00 0 
+7910d000-791d8000 rw-p 00000000 00:00 0 
+791d8000-79394000 r--s 039d3000 08:03 1276024    /opt/libs/jdk1.7.0_07/jre/lib/rt.jar
+79394000-7b800000 rw-p 00000000 00:00 0 
+7b800000-7b821000 rw-p 00000000 00:00 0 
+7b821000-7b900000 ---p 00000000 00:00 0 
+7b959000-7b9aa000 rw-p 00000000 00:00 0 
+7b9aa000-7b9ab000 ---p 00000000 00:00 0 
+7b9ab000-7ba2b000 rw-p 00000000 00:00 0 
+7ba2b000-7ba2c000 ---p 00000000 00:00 0 
+7ba2c000-7baac000 rw-p 00000000 00:00 0 
+7baac000-7baad000 ---p 00000000 00:00 0 
+7baad000-7bb2d000 rw-p 00000000 00:00 0 
+7bb2d000-7bb2e000 ---p 00000000 00:00 0 
+7bb2e000-7bbae000 rw-p 00000000 00:00 0 
+7bbae000-7bbaf000 ---p 00000000 00:00 0 
+7bbaf000-7bc2f000 rw-p 00000000 00:00 0 
+7bc2f000-7bc30000 ---p 00000000 00:00 0 
+7bc30000-7bcb8000 rw-p 00000000 00:00 0 
+7bcb8000-7bcd0000 rw-p 00000000 00:00 0 
+7bcd0000-7bce2000 rw-p 00000000 00:00 0 
+7bce2000-7bde3000 rw-p 00000000 00:00 0 
+7bde3000-7bdeb000 rw-p 00000000 00:00 0 
+7bdeb000-7be03000 rw-p 00000000 00:00 0 
+7be03000-7be15000 rw-p 00000000 00:00 0 
+7be15000-7bf15000 rw-p 00000000 00:00 0 
+7bf15000-7bf1f000 rw-p 00000000 00:00 0 
+7bf1f000-7bf9f000 rw-p 00000000 00:00 0 
+7bf9f000-7cfa0000 rw-p 00000000 00:00 0 
+7cfa0000-7ffa0000 rw-p 00000000 00:00 0 
+7ffa0000-82200000 rw-p 00000000 00:00 0 
+82200000-a2500000 rw-p 00000000 00:00 0 
+a2500000-a3620000 rw-p 00000000 00:00 0 
+a3620000-b37a0000 rw-p 00000000 00:00 0 
+b37a1000-b37aa000 rw-p 00000000 00:00 0 
+b37aa000-b3861000 rw-p 00000000 00:00 0 
+b3861000-b3aa1000 rwxp 00000000 00:00 0 
+b3aa1000-b6861000 rw-p 00000000 00:00 0 
+b6861000-b6878000 r-xp 00000000 08:03 1276584    /opt/libs/jdk1.7.0_07/jre/lib/i386/libzip.so
+b6878000-b6879000 rw-p 00017000 08:03 1276584    /opt/libs/jdk1.7.0_07/jre/lib/i386/libzip.so
+b6879000-b6881000 rw-s 00000000 08:01 678610     /tmp/hsperfdata_kazuyaym/12297
+b6881000-b68d6000 r--s 00000000 08:03 425198     /var/cache/nscd/passwd
+b68d6000-b68f9000 r-xp 00000000 08:03 1276546    /opt/libs/jdk1.7.0_07/jre/lib/i386/libjava.so
+b68f9000-b68fa000 rw-p 00023000 08:03 1276546    /opt/libs/jdk1.7.0_07/jre/lib/i386/libjava.so
+b68fa000-b6901000 r-xp 00000000 08:03 139689     /lib/i686/cmov/librt-2.11.3.so
+b6901000-b6902000 r--p 00006000 08:03 139689     /lib/i686/cmov/librt-2.11.3.so
+b6902000-b6903000 rw-p 00007000 08:03 139689     /lib/i686/cmov/librt-2.11.3.so
+b6903000-b6906000 ---p 00000000 00:00 0 
+b6906000-b6954000 rw-p 00000000 00:00 0 
+b6954000-b6978000 r-xp 00000000 08:03 139007     /lib/i686/cmov/libm-2.11.3.so
+b6978000-b6979000 r--p 00023000 08:03 139007     /lib/i686/cmov/libm-2.11.3.so
+b6979000-b697a000 rw-p 00024000 08:03 139007     /lib/i686/cmov/libm-2.11.3.so
+b697a000-b7133000 r-xp 00000000 08:03 1276583    /opt/libs/jdk1.7.0_07/jre/lib/i386/server/libjvm.so
+b7133000-b7185000 rw-p 007b8000 08:03 1276583    /opt/libs/jdk1.7.0_07/jre/lib/i386/server/libjvm.so
+b7185000-b75a8000 rw-p 00000000 00:00 0 
+b75a8000-b76e8000 r-xp 00000000 08:03 139690     /lib/i686/cmov/libc-2.11.3.so
+b76e8000-b76e9000 ---p 00140000 08:03 139690     /lib/i686/cmov/libc-2.11.3.so
+b76e9000-b76eb000 r--p 00140000 08:03 139690     /lib/i686/cmov/libc-2.11.3.so
+b76eb000-b76ec000 rw-p 00142000 08:03 139690     /lib/i686/cmov/libc-2.11.3.so
+b76ec000-b76ef000 rw-p 00000000 00:00 0 
+b76ef000-b76f1000 r-xp 00000000 08:03 139005     /lib/i686/cmov/libdl-2.11.3.so
+b76f1000-b76f2000 r--p 00001000 08:03 139005     /lib/i686/cmov/libdl-2.11.3.so
+b76f2000-b76f3000 rw-p 00002000 08:03 139005     /lib/i686/cmov/libdl-2.11.3.so
+b76f3000-b76f4000 rw-p 00000000 00:00 0 
+b76f4000-b7707000 r-xp 00000000 08:03 1276550    /opt/libs/jdk1.7.0_07/jre/lib/i386/jli/libjli.so
+b7707000-b7708000 rw-p 00012000 08:03 1276550    /opt/libs/jdk1.7.0_07/jre/lib/i386/jli/libjli.so
+b7708000-b771d000 r-xp 00000000 08:03 139680     /lib/i686/cmov/libpthread-2.11.3.so
+b771d000-b771e000 r--p 00014000 08:03 139680     /lib/i686/cmov/libpthread-2.11.3.so
+b771e000-b771f000 rw-p 00015000 08:03 139680     /lib/i686/cmov/libpthread-2.11.3.so
+b771f000-b7721000 rw-p 00000000 00:00 0 
+b7733000-b7734000 rw-p 00000000 00:00 0 
+b7734000-b7735000 r--p 00000000 00:00 0 
+b7735000-b7740000 r-xp 00000000 08:03 1276528    /opt/libs/jdk1.7.0_07/jre/lib/i386/libverify.so
+b7740000-b7741000 rw-p 0000b000 08:03 1276528    /opt/libs/jdk1.7.0_07/jre/lib/i386/libverify.so
+b7741000-b7743000 rw-p 00000000 00:00 0 
+b7743000-b7744000 r-xp 00000000 00:00 0          [vdso]
+b7744000-b775f000 r-xp 00000000 08:03 123084     /lib/ld-2.11.3.so
+b775f000-b7760000 r--p 0001b000 08:03 123084     /lib/ld-2.11.3.so
+b7760000-b7761000 rw-p 0001c000 08:03 123084     /lib/ld-2.11.3.so
+bf954000-bf969000 rw-p 00000000 00:00 0          [stack]
+
+VM Arguments:
+java_command: MyGrid.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=/opt/libs/jdk/
+PATH=~/bin:~/.bin:/global/bin:/opt/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:.
+USERNAME=kazuyaym
+SHELL=/bin/bash
+DISPLAY=:0.0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x720d30], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x720d30], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x5d9b80], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: [libjvm.so+0x5d9b80], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGXFSZ: [libjvm.so+0x5d9b80], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libjvm.so+0x5d9b80], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x5d9460], sa_mask[0]=0x00000000, sa_flags=0x10000004
+SIGHUP: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGINT: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGTERM: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGQUIT: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+
+
+---------------  S Y S T E M  ---------------
+
+OS:6.0.7
+
+uname:Linux 2.6.32-5-686 #1 SMP Mon Feb 25 01:04:36 UTC 2013 i686
+libc:glibc 2.11.3 NPTL 2.11.3 
+rlimit: STACK 8192k, CORE 0k, NPROC 200, NOFILE 1024, AS infinity
+load average:0.43 0.51 0.43
+
+/proc/meminfo:
+MemTotal:        3374680 kB
+MemFree:          364872 kB
+Buffers:          249692 kB
+Cached:          1700800 kB
+SwapCached:            0 kB
+Active:          1373680 kB
+Inactive:        1288584 kB
+Active(anon):     713156 kB
+Inactive(anon):    20352 kB
+Active(file):     660524 kB
+Inactive(file):  1268232 kB
+Unevictable:          20 kB
+Mlocked:              20 kB
+HighTotal:       2502344 kB
+HighFree:          11408 kB
+LowTotal:         872336 kB
+LowFree:          353464 kB
+SwapTotal:       2047992 kB
+SwapFree:        2047992 kB
+Dirty:               108 kB
+Writeback:             0 kB
+AnonPages:        711860 kB
+Mapped:           198984 kB
+Shmem:             21732 kB
+Slab:             142080 kB
+SReclaimable:     129016 kB
+SUnreclaim:        13064 kB
+KernelStack:        3608 kB
+PageTables:         7260 kB
+NFS_Unstable:         52 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     3735332 kB
+Committed_AS:    2192116 kB
+VmallocTotal:     122880 kB
+VmallocUsed:       24812 kB
+VmallocChunk:      86212 kB
+HardwareCorrupted:     0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       4096 kB
+DirectMap4k:       12280 kB
+DirectMap4M:      892928 kB
+
+
+CPU:total 6 (6 cores per cpu, 1 threads per core) family 16 model 10 stepping 0, cmov, cx8, fxsr, mmx, sse, sse2, sse3, popcnt, mmxext, 3dnowpref, lzcnt, sse4a, tsc, tscinvbit, tscinv
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 10
+model name	: AMD Phenom(tm) II X6 1055T Processor
+stepping	: 0
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 0
+siblings	: 6
+core id		: 0
+cpu cores	: 6
+apicid		: 0
+initial apicid	: 0
+fdiv_bug	: no
+hlt_bug		: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 6
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow constant_tsc nonstop_tsc extd_apicid pni monitor cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt
+bogomips	: 5586.68
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [9]
+
+processor	: 1
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 10
+model name	: AMD Phenom(tm) II X6 1055T Processor
+stepping	: 0
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 0
+siblings	: 6
+core id		: 1
+cpu cores	: 6
+apicid		: 1
+initial apicid	: 1
+fdiv_bug	: no
+hlt_bug		: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 6
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow constant_tsc nonstop_tsc extd_apicid pni monitor cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt
+bogomips	: 5586.57
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [9]
+
+processor	: 2
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 10
+model name	: AMD Phenom(tm) II X6 1055T Processor
+stepping	: 0
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 0
+siblings	: 6
+core id		: 2
+cpu cores	: 6
+apicid		: 2
+initial apicid	: 2
+fdiv_bug	: no
+hlt_bug		: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 6
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow constant_tsc nonstop_tsc extd_apicid pni monitor cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt
+bogomips	: 5586.59
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [9]
+
+processor	: 3
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 10
+model name	: AMD Phenom(tm) II X6 1055T Processor
+stepping	: 0
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 0
+siblings	: 6
+core id		: 3
+cpu cores	: 6
+apicid		: 3
+initial apicid	: 3
+fdiv_bug	: no
+hlt_bug		: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 6
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow constant_tsc nonstop_tsc extd_apicid pni monitor cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt
+bogomips	: 5586.58
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [9]
+
+processor	: 4
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 10
+model name	: AMD Phenom(tm) II X6 1055T Processor
+stepping	: 0
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 0
+siblings	: 6
+core id		: 4
+cpu cores	: 6
+apicid		: 4
+initial apicid	: 4
+fdiv_bug	: no
+hlt_bug		: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 6
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow constant_tsc nonstop_tsc extd_apicid pni monitor cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt
+bogomips	: 5586.57
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [9]
+
+processor	: 5
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 10
+model name	: AMD Phenom(tm) II X6 1055T Processor
+stepping	: 0
+cpu MHz		: 800.000
+cache size	: 512 KB
+physical id	: 0
+siblings	: 6
+core id		: 5
+cpu cores	: 6
+apicid		: 5
+initial apicid	: 5
+fdiv_bug	: no
+hlt_bug		: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 6
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow constant_tsc nonstop_tsc extd_apicid pni monitor cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt
+bogomips	: 5586.58
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate [9]
+
+
+
+Memory: 4k page, physical 3374680k(364872k free), swap 2047992k(2047992k free)
+
+vm_info: Java HotSpot(TM) Server VM (23.3-b01) for linux-x86 JRE (1.7.0_07-b10), built on Aug 28 2012 18:02:17 by "java_re" with gcc 4.3.0 20080428 (Red Hat 4.3.0-8)
+
+time: Wed May  8 16:12:29 2013
+elapsed time: 0 seconds
+

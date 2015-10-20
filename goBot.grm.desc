@@ -1,0 +1,638 @@
+
+state 0:
+
+	START : . BLOCO 
+
+	ID	shift 20
+	TEXTO	shift 19
+	HOWAMI	shift 18
+	MAPA	shift 17
+	MOVEA	shift 16
+	MOVEB	shift 15
+	MOVEE	shift 14
+	MOVED	shift 13
+	SHOW	shift 12
+	NOOP	shift 11
+	PRINT	shift 10
+	TYPE	shift 9
+
+	DECL	goto 8
+	ATRIB	goto 7
+	C_MOVEA	goto 6
+	C_MOVEB	goto 5
+	C_MOVEE	goto 4
+	C_MOVED	goto 3
+	START	goto 53
+	CMD	goto 2
+	BLOCO	goto 1
+
+	.	error
+
+
+state 1:
+
+	START : BLOCO .  (reduce by rule 0)
+
+
+
+	.	reduce by rule 0
+
+
+state 2:
+
+	BLOCO : CMD .  (reduce by rule 1)
+	BLOCO : CMD . SEMI 
+	BLOCO : CMD . SEMI BLOCO 
+
+	SEMI	shift 21
+
+
+	.	reduce by rule 1
+
+
+state 3:
+
+	CMD : C_MOVED .  (reduce by rule 11)
+
+
+
+	.	reduce by rule 11
+
+
+state 4:
+
+	CMD : C_MOVEE .  (reduce by rule 10)
+
+
+
+	.	reduce by rule 10
+
+
+state 5:
+
+	CMD : C_MOVEB .  (reduce by rule 9)
+
+
+
+	.	reduce by rule 9
+
+
+state 6:
+
+	CMD : C_MOVEA .  (reduce by rule 8)
+
+
+
+	.	reduce by rule 8
+
+
+state 7:
+
+	CMD : ATRIB .  (reduce by rule 7)
+
+
+
+	.	reduce by rule 7
+
+
+state 8:
+
+	CMD : DECL .  (reduce by rule 6)
+
+
+
+	.	reduce by rule 6
+
+
+state 9:
+
+	DECL : TYPE . ID 
+
+	ID	shift 22
+
+
+	.	error
+
+
+state 10:
+
+	CMD : PRINT . EXP 
+	CMD : PRINT . TEXTO 
+
+	ID	shift 34
+	NUM	shift 33
+	TEXTO	shift 32
+	GET_ENERGY	shift 31
+	GET_LIGHT	shift 30
+	GET_TEMP	shift 29
+	LPAR	shift 28
+	NOT	shift 27
+	TRUE	shift 26
+	FALSE	shift 25
+
+	EXP	goto 24
+	TERMO	goto 23
+
+	.	error
+
+
+state 11:
+
+	CMD : NOOP .  (reduce by rule 16)
+
+
+
+	.	reduce by rule 16
+
+
+state 12:
+
+	CMD : SHOW .  (reduce by rule 14)
+
+
+
+	.	reduce by rule 14
+
+
+state 13:
+
+	C_MOVED : MOVED .  (reduce by rule 22)
+
+
+
+	.	reduce by rule 22
+
+
+state 14:
+
+	C_MOVEE : MOVEE .  (reduce by rule 21)
+
+
+
+	.	reduce by rule 21
+
+
+state 15:
+
+	C_MOVEB : MOVEB .  (reduce by rule 20)
+
+
+
+	.	reduce by rule 20
+
+
+state 16:
+
+	C_MOVEA : MOVEA .  (reduce by rule 19)
+
+
+
+	.	reduce by rule 19
+
+
+state 17:
+
+	CMD : MAPA .  (reduce by rule 15)
+
+
+
+	.	reduce by rule 15
+
+
+state 18:
+
+	CMD : HOWAMI .  (reduce by rule 13)
+
+
+
+	.	reduce by rule 13
+
+
+state 19:
+
+	CMD : TEXTO .  (reduce by rule 12)
+
+
+
+	.	reduce by rule 12
+
+
+state 20:
+
+	ATRIB : ID . ATR EXP 
+
+	ATR	shift 35
+
+
+	.	error
+
+
+state 21:
+
+	BLOCO : CMD SEMI .  (reduce by rule 2)
+	BLOCO : CMD SEMI . BLOCO 
+
+	ID	shift 20
+	TEXTO	shift 19
+	HOWAMI	shift 18
+	MAPA	shift 17
+	MOVEA	shift 16
+	MOVEB	shift 15
+	MOVEE	shift 14
+	MOVED	shift 13
+	SHOW	shift 12
+	NOOP	shift 11
+	PRINT	shift 10
+	TYPE	shift 9
+
+	DECL	goto 8
+	ATRIB	goto 7
+	C_MOVEA	goto 6
+	C_MOVEB	goto 5
+	C_MOVEE	goto 4
+	C_MOVED	goto 3
+	CMD	goto 2
+	BLOCO	goto 36
+
+	.	reduce by rule 2
+
+
+state 22:
+
+	DECL : TYPE ID .  (reduce by rule 17)
+
+
+
+	.	reduce by rule 17
+
+
+state 23:
+
+	EXP : TERMO .  (reduce by rule 23)
+	EXP : TERMO . OPERB LPAR EXP RPAR 
+	EXP : TERMO . OPERB TERMO 
+
+	OPERB	shift 37
+
+
+	.	reduce by rule 23
+
+
+state 24:
+
+	CMD : PRINT EXP .  (reduce by rule 4)
+
+
+
+	.	reduce by rule 4
+
+
+state 25:
+
+	TERMO : FALSE .  (reduce by rule 32)
+
+
+
+	.	reduce by rule 32
+
+
+state 26:
+
+	TERMO : TRUE .  (reduce by rule 31)
+
+
+
+	.	reduce by rule 31
+
+
+state 27:
+
+	EXP : NOT . LPAR EXP RPAR 
+
+	LPAR	shift 38
+
+
+	.	error
+
+
+state 28:
+
+	EXP : LPAR . EXP RPAR 
+	EXP : LPAR . EXP RPAR OPERB LPAR EXP RPAR 
+	EXP : LPAR . EXP RPAR OPERB TERMO 
+
+	ID	shift 34
+	NUM	shift 33
+	GET_ENERGY	shift 31
+	GET_LIGHT	shift 30
+	GET_TEMP	shift 29
+	LPAR	shift 28
+	NOT	shift 27
+	TRUE	shift 26
+	FALSE	shift 25
+
+	EXP	goto 39
+	TERMO	goto 23
+
+	.	error
+
+
+state 29:
+
+	TERMO : GET_TEMP .  (reduce by rule 36)
+
+
+
+	.	reduce by rule 36
+
+
+state 30:
+
+	TERMO : GET_LIGHT .  (reduce by rule 35)
+
+
+
+	.	reduce by rule 35
+
+
+state 31:
+
+	TERMO : GET_ENERGY .  (reduce by rule 34)
+
+
+
+	.	reduce by rule 34
+
+
+state 32:
+
+	CMD : PRINT TEXTO .  (reduce by rule 5)
+
+
+
+	.	reduce by rule 5
+
+
+state 33:
+
+	TERMO : NUM .  (reduce by rule 30)
+
+
+
+	.	reduce by rule 30
+
+
+state 34:
+
+	TERMO : ID .  (reduce by rule 33)
+
+
+
+	.	reduce by rule 33
+
+
+state 35:
+
+	ATRIB : ID ATR . EXP 
+
+	ID	shift 34
+	NUM	shift 33
+	GET_ENERGY	shift 31
+	GET_LIGHT	shift 30
+	GET_TEMP	shift 29
+	LPAR	shift 28
+	NOT	shift 27
+	TRUE	shift 26
+	FALSE	shift 25
+
+	EXP	goto 40
+	TERMO	goto 23
+
+	.	error
+
+
+state 36:
+
+	BLOCO : CMD SEMI BLOCO .  (reduce by rule 3)
+
+
+
+	.	reduce by rule 3
+
+
+state 37:
+
+	EXP : TERMO OPERB . LPAR EXP RPAR 
+	EXP : TERMO OPERB . TERMO 
+
+	ID	shift 34
+	NUM	shift 33
+	GET_ENERGY	shift 31
+	GET_LIGHT	shift 30
+	GET_TEMP	shift 29
+	LPAR	shift 42
+	TRUE	shift 26
+	FALSE	shift 25
+
+	TERMO	goto 41
+
+	.	error
+
+
+state 38:
+
+	EXP : NOT LPAR . EXP RPAR 
+
+	ID	shift 34
+	NUM	shift 33
+	GET_ENERGY	shift 31
+	GET_LIGHT	shift 30
+	GET_TEMP	shift 29
+	LPAR	shift 28
+	NOT	shift 27
+	TRUE	shift 26
+	FALSE	shift 25
+
+	EXP	goto 43
+	TERMO	goto 23
+
+	.	error
+
+
+state 39:
+
+	EXP : LPAR EXP . RPAR 
+	EXP : LPAR EXP . RPAR OPERB LPAR EXP RPAR 
+	EXP : LPAR EXP . RPAR OPERB TERMO 
+
+	RPAR	shift 44
+
+
+	.	error
+
+
+state 40:
+
+	ATRIB : ID ATR EXP .  (reduce by rule 18)
+
+
+
+	.	reduce by rule 18
+
+
+state 41:
+
+	EXP : TERMO OPERB TERMO .  (reduce by rule 28)
+
+
+
+	.	reduce by rule 28
+
+
+state 42:
+
+	EXP : TERMO OPERB LPAR . EXP RPAR 
+
+	ID	shift 34
+	NUM	shift 33
+	GET_ENERGY	shift 31
+	GET_LIGHT	shift 30
+	GET_TEMP	shift 29
+	LPAR	shift 28
+	NOT	shift 27
+	TRUE	shift 26
+	FALSE	shift 25
+
+	EXP	goto 45
+	TERMO	goto 23
+
+	.	error
+
+
+state 43:
+
+	EXP : NOT LPAR EXP . RPAR 
+
+	RPAR	shift 46
+
+
+	.	error
+
+
+state 44:
+
+	EXP : LPAR EXP RPAR .  (reduce by rule 24)
+	EXP : LPAR EXP RPAR . OPERB LPAR EXP RPAR 
+	EXP : LPAR EXP RPAR . OPERB TERMO 
+
+	OPERB	shift 47
+
+
+	.	reduce by rule 24
+
+
+state 45:
+
+	EXP : TERMO OPERB LPAR EXP . RPAR 
+
+	RPAR	shift 48
+
+
+	.	error
+
+
+state 46:
+
+	EXP : NOT LPAR EXP RPAR .  (reduce by rule 29)
+
+
+
+	.	reduce by rule 29
+
+
+state 47:
+
+	EXP : LPAR EXP RPAR OPERB . LPAR EXP RPAR 
+	EXP : LPAR EXP RPAR OPERB . TERMO 
+
+	ID	shift 34
+	NUM	shift 33
+	GET_ENERGY	shift 31
+	GET_LIGHT	shift 30
+	GET_TEMP	shift 29
+	LPAR	shift 50
+	TRUE	shift 26
+	FALSE	shift 25
+
+	TERMO	goto 49
+
+	.	error
+
+
+state 48:
+
+	EXP : TERMO OPERB LPAR EXP RPAR .  (reduce by rule 26)
+
+
+
+	.	reduce by rule 26
+
+
+state 49:
+
+	EXP : LPAR EXP RPAR OPERB TERMO .  (reduce by rule 27)
+
+
+
+	.	reduce by rule 27
+
+
+state 50:
+
+	EXP : LPAR EXP RPAR OPERB LPAR . EXP RPAR 
+
+	ID	shift 34
+	NUM	shift 33
+	GET_ENERGY	shift 31
+	GET_LIGHT	shift 30
+	GET_TEMP	shift 29
+	LPAR	shift 28
+	NOT	shift 27
+	TRUE	shift 26
+	FALSE	shift 25
+
+	EXP	goto 51
+	TERMO	goto 23
+
+	.	error
+
+
+state 51:
+
+	EXP : LPAR EXP RPAR OPERB LPAR EXP . RPAR 
+
+	RPAR	shift 52
+
+
+	.	error
+
+
+state 52:
+
+	EXP : LPAR EXP RPAR OPERB LPAR EXP RPAR .  (reduce by rule 25)
+
+
+
+	.	reduce by rule 25
+
+
+state 53:
+
+
+	EOF	accept
+
+
+	.	error
+
+70 of 160 action table entries left after compaction
+31 goto table entries

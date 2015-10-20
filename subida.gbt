@@ -1,0 +1,43 @@
+int ultCol;
+int ultLin;
+
+ultCol <- 0;
+ultLin <- 0;
+ultCol <- ultCol + 1;
+
+delay;
+delay;
+delay;
+delay;
+moveD;
+delay;
+moveD;
+delay;
+moveD;
+delay;
+moveD;
+delay;
+moveA;
+delay;
+moveA;
+delay;
+moveA;
+delay;
+moveA;
+delay;
+moveE;
+delay;
+moveE;
+delay;
+moveE;
+delay;
+moveE;
+delay;
+moveB;
+delay;
+moveB;
+delay;
+moveB;
+delay;
+
+

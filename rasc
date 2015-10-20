@@ -1,0 +1,9 @@
+"getWall"   => (Tokens.GET_WALL(!pos,!pos));
+"getLin"   => (Tokens.GET_LIN(!pos,!pos));
+"getCol"   => (Tokens.GET_COL(!pos,!pos));
+"getAltura"   => (Tokens.GET_HEIGHT(!pos,!pos));
+"getLargura"   => (Tokens.GET_WIDTH(!pos,!pos));
+"write"    => (Tokens.WRITE(!pos,!pos));
+
+%term ID of string | NUM of int | TEXTO of string | SHOW | HOWAMI | MAPA| MOVEA | MOVEB | MOVEE | MOVED |
+		GET_ENERGY | GET_LIGHT | GET_TEMP | GET_WALL | GET_LIN | GET_COL |GET_HEIGHT | GET_WIDTH | NOOP | TIMES | PRINT | WRITE | SEMI | EOF | TYPE of string  | ATR | LPAR | RPAR | NOT | TRUE | FALSE |  OPERB of string
